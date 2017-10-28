@@ -1,8 +1,8 @@
-import csv
 import json
 import os
 import sys
 
+import matplotlib.pyplot as plt
 import pandas as pd
 
 from collections import defaultdict
@@ -75,6 +75,24 @@ def get_correlation(stats, indicator_fp):
 
         assert(len(nypd) == len(core))
 
+        # print(nypd)
+        # print(core)
+
+        plt.figure(1)
+
+        plt.subplot(211)
+        plt.title(boro)
+        plt.ylabel('Number of crimes')
+        plt.plot(years, nypd, 'b-', label='NYPD')  # NYPD in blue
+        plt.legend(loc='upper right')
+
+        plt.subplot(212)
+        plt.ylabel('Racial diversity index')
+        plt.plot(years, core, 'g-', label='CoreData')  # CoreData in green
+        plt.legend(loc='upper right')
+
+        plt.show()
+
         # Print Pearson correlation
         print(pearsonr(nypd, core))
 
@@ -85,7 +103,6 @@ def main(nypd_fp, corenyc_fp):
     """
     main()
     """
-
     # Get frequency counts from NYPD data
     if os.path.isfile('nypd_crime_freqs.json'):
         crime_stats = json.load(open('nypd_crime_freqs.json'))
