@@ -53,7 +53,7 @@ def get_crime_stats(nypd_fp, normalize=True):
                 stats[year][boro] = stats[year][boro] / total
 
     # Write statistics to JSON
-    with open('nypd_crime_stats.json', 'w') as out:
+    with open('nypd_crime_freqs.json', 'w') as out:
         json.dump(stats, out, sort_keys=True)
 
     return stats

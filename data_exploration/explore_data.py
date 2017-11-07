@@ -23,6 +23,12 @@ def main(data_fp):
         'Longitude',  # using 'X_COORD_CD' instead
     ], axis=1, inplace=True)
 
+    # # Get 'KY_CD' code description
+    # df.set_index('KY_CD', inplace=True)
+    # for kycd in [341, 578, 344, 351, 109]:
+    #     print(kycd, df.loc[kycd, 'OFNS_DESC'])
+    #     continue
+
     # Get 5 most frequent, unique values per (interpretable) column
     stats = {}
     for col in [
@@ -49,11 +55,12 @@ def main(data_fp):
         writer = csv.writer(csvfile)
         for col in sorted(stats):
             row = [col]
-            row.extend(['{0} [{1}]'.format(x[0], x[1]) for x in stats[col]])
+            row.extend(['{0}\n [{1}]'.format(x[0], x[1]) for x in stats[col]])
             writer.writerow(row)
 
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
         print('USAGE: python explore_data.py <data CSV>')
+        sys.exit(1)
     main(sys.argv[1])
