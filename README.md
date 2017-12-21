@@ -18,6 +18,8 @@ pip install -r python_requirements.txt
 
 ### Jupyter notebooks
 
+There are two [Jupyter notebooks](http://jupyter.readthedocs.io/en/latest/running.html) in the `data_exploration/` folder, `crime_analyses.ipynb` and `crime_data_prep.ipynb`.
+
 ### R
 
 
