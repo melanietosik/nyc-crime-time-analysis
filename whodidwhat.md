@@ -4,6 +4,10 @@
 
 ## Jason
 
+- Data exploration (find second source data that might affect and correlate with crime frequency)
+- Education correlation and plots
+- Slides
+
 ## Melanie
 
 - Data exploration
