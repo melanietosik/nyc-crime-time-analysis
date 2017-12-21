@@ -35,3 +35,6 @@ There are two [Jupyter notebooks](http://jupyter.readthedocs.io/en/latest/runnin
 - M. A. Tayebi, U. Gla¨sser and P. L. Brantingham, "Learning where to inspect: Location learning for crime prediction," 2015 IEEE International Conference on Intelligence and Security Informatics (ISI), Baltimore, MD, 2015, pp. 25-30.
 
 - Al Boni, Mohammad & Gerber, Matthew. (2016). Area-Specific Crime Prediction Models. 671-676. 10.1109/ICMLA.2016.0118.
+
+- Seth R. Flaxman, "A General Approach to Prediction and Forecasting Crime Rates with Gaussian
+Processes", 2014.
