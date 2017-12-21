@@ -8,6 +8,7 @@ from operator import itemgetter
 
 def main(data_fp):
     """
+    Preprocessing and data exploration
     """
     # Read data CSV
     df = pd.read_csv(data_fp)

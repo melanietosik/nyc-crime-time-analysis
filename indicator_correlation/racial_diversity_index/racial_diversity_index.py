@@ -53,7 +53,7 @@ def get_crime_stats(nypd_fp, normalize=True):
                 stats[year][boro] = stats[year][boro] / total
 
     # Write statistics to JSON
-    with open('nypd_crime_stats.json', 'w') as out:
+    with open('nypd_crime_freqs.json', 'w') as out:
         json.dump(stats, out, sort_keys=True)
 
     return stats
@@ -73,7 +73,7 @@ def get_correlation(stats, indicator_fp):
     years = sorted(set(df.columns.values).intersection(list(stats.keys())))
 
     for boro in boros:
-        print(boro)
+        # print(boro)
 
         nypd = []  # Append crime stats data
         core = []  # Append demographics data
@@ -84,8 +84,8 @@ def get_correlation(stats, indicator_fp):
 
         assert(len(nypd) == len(core))
 
-        # print(nypd)
-        # print(core)
+        print(nypd)
+        print(core)
 
         plt.figure(1)
 
@@ -103,7 +103,8 @@ def get_correlation(stats, indicator_fp):
         plt.show()
 
         # Print Pearson correlation
-        print(pearsonr(nypd, core))
+        score, pscore = pearsonr(nypd, core)
+        print("{0}, {1}".format(round(score, 6), round(pscore, 6)))
 
     return None
 
