@@ -28,4 +28,6 @@
 
 - Data exploration
 - Data preparation
+- Median Household income correlations
 - Visualization
+
