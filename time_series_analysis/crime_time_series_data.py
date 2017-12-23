@@ -14,7 +14,7 @@ get_ipython().magic('matplotlib inline')
 
 
 # read in data
-dataset_raw = pd.read_csv("C:\\Users\\sohil\\Desktop\\NYU_2017_Materials_and_Assignments\\Fall2017\\PredictiveAnalytics\\Project\\NYPD_Complaint_Data_Historic.csv",sep=",",header=0)
+dataset_raw = pd.read_csv("C:\\Users\\sohil\\Desktop\\NYU_2017_Materials_and_Assignments\\Fall2017\\PredictiveAnalytics\\Project\\NYPD_Complaint_Data_Historic.csv", sep=",", header=0)
 
 
 # In[4]:
@@ -27,14 +27,14 @@ dataset_raw.head(n=8)
 
 
 def cleanData(dataset):
-    #Removing garbage columns with higher NA values
-    columns_toDrop = ['CMPLNT_NUM','CMPLNT_TO_DT','CMPLNT_TO_TM','PD_CD','PD_DESC','JURIS_DESC','PARKS_NM','HADEVELOPT']
+    # Removing garbage columns with higher NA values
+    columns_toDrop = ['CMPLNT_NUM', 'CMPLNT_TO_DT', 'CMPLNT_TO_TM', 'PD_CD', 'PD_DESC', 'JURIS_DESC', 'PARKS_NM', 'HADEVELOPT']
     dataset = dataset.drop(columns_toDrop, 1)
-    
-    #Important columns to care and removing NAN values in these fields
-    columns_toCare = ['X_COORD_CD','Y_COORD_CD']
+
+    # Important columns to care and removing NAN values in these fields
+    columns_toCare = ['X_COORD_CD', 'Y_COORD_CD']
     dataset_working = dataset.dropna(subset=columns_toCare, how='all')
-    
+
     return dataset_working
 
 
@@ -48,8 +48,8 @@ dataset_clean.head(n=8)
 # In[7]:
 
 
-#Save Claned Data file as CSV
-dataset_clean.to_csv('crimeDataClean.csv',sep='\t',encoding='utf-8')
+# Save Claned Data file as CSV
+dataset_clean.to_csv('crimeDataClean.csv', sep='\t', encoding='utf-8')
 
 
 # In[8]:
@@ -76,13 +76,13 @@ print(dataNACountCMPLNT.isnull().sum())
 
 from pandas import datetime
 from matplotlib import pyplot
-dataset_clean.groupby(['CMPLNT_FR_DT','LAW_CAT_CD','BORO_NM']).size()
+dataset_clean.groupby(['CMPLNT_FR_DT', 'LAW_CAT_CD', 'BORO_NM']).size()
 
 
 # In[11]:
 
 
-dataset_clean.groupby(['CMPLNT_FR_DT','LAW_CAT_CD','BORO_NM']).size()
+dataset_clean.groupby(['CMPLNT_FR_DT', 'LAW_CAT_CD', 'BORO_NM']).size()
 
 
 # In[14]:
@@ -118,4 +118,3 @@ sys.path.append("../backend/")
 
 
 from PreProcessor import PreProcessor
-

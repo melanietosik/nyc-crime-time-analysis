@@ -13,16 +13,12 @@
 ```
 virtualenv -p python3 env/
 source env/bin/activate
-pip install -r python_requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Jupyter notebooks
 
 There are two [Jupyter notebooks](http://jupyter.readthedocs.io/en/latest/running.html) in the `data_exploration/` folder, `crime_analyses.ipynb` and `crime_data_prep.ipynb`.
-
-### R
-
-???
 
 ## Related work
 
@@ -38,3 +34,7 @@ There are two [Jupyter notebooks](http://jupyter.readthedocs.io/en/latest/runnin
 
 - Seth R. Flaxman, "A General Approach to Prediction and Forecasting Crime Rates with Gaussian
 Processes", 2014.
+
+## Project repo
+
+A preview of the project is available [on GitHub](https://github.com/melanietosik/nyc_crime_time_analysis) as well 
