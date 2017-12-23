@@ -37,4 +37,4 @@ Processes", 2014.
 
 ## Project repo
 
-A preview of the project is available [on GitHub](https://github.com/melanietosik/nyc_crime_time_analysis) as well 
+A preview of the project is available [on GitHub](https://github.com/melanietosik/nyc_crime_time_analysis)
